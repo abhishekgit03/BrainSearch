@@ -4,6 +4,7 @@
 - TailwindCSS
 - Python
 - Flask
+- OpenAI API
 
 # Screenshots:
 ![image](https://github.com/abhishekgit03/internet-search-frontend/assets/92089364/15ee9b91-5ac0-43f0-83b4-44ef4530c678)

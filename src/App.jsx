@@ -8,7 +8,7 @@ import './App.css'
 
 function App() {
   const [text, setText] = useState("")
-  const [answer, setAnswer] = useState(`Tap the search button to get your results`)
+  const [answer, setAnswer] = useState(`Search anything!`)
   const [isLoading, setLoader]=useState(false)
   const [themeMode, setThemeMode] = useState("light")
   
@@ -30,9 +30,20 @@ function App() {
 
   return (
     <ThemeProvider value={{themeMode, lightTheme, darkTheme}}>
+      <main>
+      <div className='main'>
+        <div className='gradient' />
+      </div>
     <div className='dark:bg-gray-800'>
       <Navbar />
-      <div className="flex flex-col items-center  h-screen p-16 ">
+      <div className="flex flex-col items-center  h-screen p-10 ">
+      <h1 className='head_text'>
+        Search the Internet using<br className='max-md:hidden' />
+        <span className='orange_gradient '>OpenAI GPT-4</span>
+      </h1>
+      <h2 className='desc mb-5'>
+      Whether you're tracking global events, industry trends, or local news, BrainSearch tailors its responses to your preferences
+      </h2>
       <Search
       text={text}
       onTextChange={(text) => setText(text)}
@@ -42,12 +53,14 @@ function App() {
       <Loader
       isLoading={isLoading}
       />
-      <div className="flex flex-col bg-gray-100  border-2 border-dotted rounded-lg p-4 mt-10 items-center w-full h-56 overflow-auto">
+      <div className="flex flex-col bg-white border-2 rounded-lg p-4 mt-10 items-center w-full h-40 overflow-auto">
       <p className="text-lg text-gray-700">{answer}</p>
       </div>
       </div>
     </div>
+    </main>
     </ThemeProvider>
+   
   )
 }
 
